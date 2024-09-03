@@ -1,0 +1,3 @@
+-1 cree une variable string
+-2 transformer la variable en int
+-3 transformer le int en chaine binaire

@@ -1,12 +1,13 @@
 package org.kouassi
 
-fun main(array: Array<Int>){
-    println(intABinaire("2"))
+fun main(array: Array<String>){
+    for (s in array){
+        intABinaire(s)
+    }
+
 }
 fun intABinaire(chain: String){
-
-    var chaine: String=chain
-    var num:Int = chaine.toInt()
-    var binaire = num.
-    return println(num)
+    var num:Int = chain.toInt()
+    var binaire = Integer.toBinaryString(num)
+    println(binaire)
 }

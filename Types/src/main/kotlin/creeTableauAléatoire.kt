@@ -1,14 +1,21 @@
 package org.kouassi
+import kotlin.random.Random
 
 fun main(){
-
-
+val tableau = creeTableauAleatoire(100)
+stat(tableau)
 }
-//fun creeTableauAleatoire(n: Int): Array<Int> {
-    //val tableau = {
-     //   for (n:Int in Array in )
-    //}
+fun creeTableauAleatoire(n: Int): Array<Int> {
+   return Array(n) {Random.nextInt(0,101)}
+}
 
-
-   //return tableau
-//}
+fun stat(tableau : Array<Int>){
+    val somme = tableau.sum()
+    val moyenne = tableau.average()
+    val max = tableau.max()
+    val min = tableau.min()
+    println("Somme : " + somme)
+    println("Moyenne : " + moyenne)
+    println("Max : " + max)
+    println("Min : " + min)
+}

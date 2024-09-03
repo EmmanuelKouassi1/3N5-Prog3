@@ -1,0 +1,3 @@
+-1 Prendre en argument une adresse URL d'un site web
+-2 Afficher son contenue dans la console 
+-N.B peux utiliser Jsoup
