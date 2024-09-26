@@ -11,7 +11,7 @@ fun creeTableauAleatoire(n: Int): Array<Int> {
 
 fun stat(tableau : Array<Int>){
     val somme = tableau.sum()
-    val moyenne = tableau.average()
+    val moyenne = tableau.average()w
     val max = tableau.max()
     val min = tableau.min()
     println("Somme : " + somme)
