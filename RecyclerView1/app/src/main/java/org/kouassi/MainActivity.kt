@@ -1,5 +1,6 @@
 package org.kouassi
 
+import android.content.Intent
 import org.kouassi.adapters.MonAdapter
 import android.os.Bundle
 import android.util.Log
@@ -17,6 +18,7 @@ class MainActivity : AppCompatActivity() {
         setupRecycler()
         fillRecycler()
         title ="Nice"
+
         }
 
 

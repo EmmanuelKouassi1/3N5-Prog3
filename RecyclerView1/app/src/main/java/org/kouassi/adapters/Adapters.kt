@@ -1,14 +1,17 @@
 package org.kouassi.adapters
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import org.kouassi.Album
+import org.kouassi.DetailActivity
 import org.kouassi.MainActivity
 import org.kouassi.databinding.ActivityMainBinding
 import org.kouassi.databinding.MonItemBinding
+
 
 class MonAdapter : ListAdapter<Album, MonAdapter.MonItemViewHolder>(MonItemDiffCallback) {
 
@@ -18,6 +21,24 @@ class MonAdapter : ListAdapter<Album, MonAdapter.MonItemViewHolder>(MonItemDiffC
             binding.albumName.text = item.name
             binding.artistName.text = item.artistName
 
+            binding.btnDelete.setOnClickListener {
+
+           val  currentList = currentList.toMutableList()
+
+
+                // Modifier la liste
+                currentList.remove(item)
+                // Envoyer la liste
+               submitList(currentList)
+
+            }
+
+            binding.btnActivity.setOnClickListener {
+                val intent: Intent = Intent(binding.root.context, DetailActivity::class.java)
+                intent.putExtra("album", item.name)
+                intent.putExtra("artist", item.artistName)
+                binding.root.context.startActivity(intent)
+            }
         }
     }
     object PersonneItemDiffCallback : DiffUtil.ItemCallback<Album>() {
