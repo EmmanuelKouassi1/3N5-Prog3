@@ -1,0 +1,18 @@
+[width=0,weight=4] et [width=0,weight=1] dans un linear layout = 4/5
+match parent= prend les dimension du parent
+wrap content= prend la taille du texte(contenu)
+
+
+a valeur: 22                            type: Int
+b valeur: false                         type: Bolean
+c valeur: 66.0f                           type: Float
+c valeur: examen 22                     type: String
+
+liste 2 = ["a", "bcd", "e", "x", "y", "z", "x", "y", "z"]
+    buildFeatures{
+        viewBinding = true
+    }
+	NoActionBar dans themes
+	le view prend tt le reste de la page vien pousser en bas
+	recycler view layout_height=wrapcontent
+	ctrl r changer le nom partt
