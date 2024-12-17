@@ -16,3 +16,46 @@ liste 2 = ["a", "bcd", "e", "x", "y", "z", "x", "y", "z"]
 	le view prend tt le reste de la page vien pousser en bas
 	recycler view layout_height=wrapcontent
 	ctrl r changer le nom partt
+gravity center
+
+ binding.btn.setOnClickListener {
+                val intent: Intent = Intent(binding.root.context, DetailsActivity::class.java)
+                intent.putExtra("version", item.android)
+                intent.putExtra("nomversion", item.version)
+                binding.root.context.startActivity(intent)
+            }
+
+class DetailsActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityDetailsBinding
+    private lateinit var adapter: MonAdapter
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivityDetailsBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        title = "Détails"
+        if(intent.hasExtra("version")) {
+            binding.tvVersion.text = intent.getStringExtra("version")
+        }
+        if(intent.hasExtra("nomversion")) {
+            binding.tvNomVersion.text = intent.getStringExtra("nomversion")
+        }
+
+
+    }
+}
+
+class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding
+    private lateinit var adapter: MonAdapter // L'adapteur est accessible partout dans notre classe
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        title ="Versions"
+        setupRecycler()
+        fillRecycler()
+
+    }
